@@ -7,7 +7,6 @@
 
   rand = Math.floor(Math.random()* 3);
   answer = fly[rand];
-  console.log(answer);
   guess = prompt("Which fly will you use? Choose between Adams, Royal Wulff, Ant, and Copper John");
 
   function Fish(name, weight){
@@ -15,26 +14,26 @@
     this.weight = weight;
   };
 
-  var Fish1 = new Fish("Lake Trout", 8);
-  var Fish2 = new Fish("Brook Trout", 21);
+  var Fish1 = new Fish("Lake Trout", 5);
+  var Fish2 = new Fish("Brook Trout", 2);
   var Fish3 = new Fish("Brown Trout", 3);
-  var Fish4 = new Fish("Rainbow Trout", 1);
+  var Fish4 = new Fish("Rainbow Trout", 4);
 
 
  var goingFishing = function(guess, answer, fly) {
    var message
-    if (guess === answer && guess === fly[0]) {
+    if (guess.toLowerCase() === answer && guess === fly[0]) {
     	message = "Good guess, you've caught a " + Fish4.name + " and it weighs " + Fish4.weight + " lbs!";
-    } else if (guess === answer && guess === fly[1]) {
+    } else if (guess.toLowerCase() === answer && guess === fly[1]) {
     	message = "They must be hungry, you've caught a" + Fish3.name + " and it weighs " + Fish3.weight + " lbs!";
-    } else if (guess === answer && guess === fly[2]) {
+    } else if (guess.toLowerCase() === answer && guess === fly[2]) {
     	message = "Good work! You've caught a " + Fish1.name + " and it weighs " + Fish1.weight + " lbs!";
-    } else if (guess === answer && guess === fly[3]) {
+    } else if (guess.toLowerCase() === answer && guess === fly[3]) {
     	message = "You've caught a " + Fish2.name + "and it weighs " + Fish2.weight + " lbs!";
     }	else {
-      message = "whahaaa?"
+      message = "It didn't bite!"
     }
-    alert(message + " The answer was " + answer);
+    alert(message + " They were eating " + answer + " today!");
   };
 
 
