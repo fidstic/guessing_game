@@ -15,3 +15,8 @@ string placement in the array. This produces a unique message regarding what
 type of fish the user caught. 
 
 If the user types something other than a string in the array the output defaults to a default message.    
+
+Updates from May 12th, 2015:
+
+We updated some syntax by taking out white space, adding the word ‘and’ in a prompt, and changing spacing. 
+We tested this goFishGame and there are no bugs. If there were to be any enhancements then a suggestion would be to create a loop. We will focus on our attentions on functions and how to adapt the concepts we learned today in lecture. 
