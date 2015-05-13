@@ -1,29 +1,43 @@
-<script> 
+<script>
 //This game prompts a user to pick a lure and see if a fish takes it
 
   var guess, answer, rand;
 
   var fly = ['adams', 'royal wulff', 'ant', 'copper john'];
 
-  rand = Math.floor(Math.random()* 3);   
+  rand = Math.floor(Math.random()* 3);
   answer = fly[rand];
   console.log(answer);
   guess = prompt("Which fly will you use? Choose between Adams, Royal Wulff, Ant, and Copper John");
 
+  function Fish(name, weight){
+    this.name = name;
+    this.weight = weight;
+  };
+
+  var Fish1 = new Fish("Lake Trout", 8);
+  var Fish2 = new Fish("Brook Trout", 21);
+  var Fish3 = new Fish("Brown Trout", 3);
+  var Fish4 = new Fish("Rainbow Trout", 1);
+
+
  var goingFishing = function(guess, answer, fly) {
    var message
-    if (guess === answer && guess === fly[0]) { 
-    	message = "Good guess, you've caught a rainbow trout!";
+    if (guess === answer && guess === fly[0]) {
+    	message = "Good guess, you've caught a " + Fish4.name + " and it weighs " + Fish4.weight + " lbs!";
     } else if (guess === answer && guess === fly[1]) {
-    	message = "They must be hungry, you've caught a brown trout!";
+    	message = "They must be hungry, you've caught a" + Fish3.name + " and it weighs " + Fish3.weight + " lbs!";
     } else if (guess === answer && guess === fly[2]) {
-    	message = "Good work! You've caught a lake trout!";
+    	message = "Good work! You've caught a " + Fish1.name + " and it weighs " + Fish1.weight + " lbs!";
     } else if (guess === answer && guess === fly[3]) {
-    	message = "You've caught a 2lb. brook trout!";	
+    	message = "You've caught a " + Fish2.name + "and it weighs " + Fish2.weight + " lbs!";
     }	else {
       message = "whahaaa?"
     }
     alert(message + " The answer was " + answer);
-  }	
+  };
+
+
+
 goingFishing(guess, answer, fly)
-</script> 
+</script>
