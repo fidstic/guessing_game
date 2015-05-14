@@ -1,3 +1,47 @@
+
+<!doctype.html>
+  <html>
+    <head>
+      <title>Fishing Game</title>
+    </head>
+    <body>
+      <h1><strong>Virtually Fishing For Fun</strong></h1>
+        <img src=http://www.yellowdogflyfishing.com/sites/default/files/trips/yellow-dog-flyfishing-adventures-argentina-patagonia-fly-fishing-trout-chocolate-lab-expeditions-12.jpg alt="some picture of fishing on the web"/>
+      <nav>
+        <ul>
+          <li><a href="About.html">About game</a> </li>
+          <li><a href="Author.html">Author</a> </li>
+          <li><a href="Other_Games.html">Other Games</a> </li>
+        </ul>
+      </nav>
+
+    <article>
+      <h2>Let's Catch Something</h2>
+        <P>It's been a long day of coding so it's time to get out of the city and get fishing! <><</p>
+          <img src=https://standupforamerica.files.wordpress.com/2009/06/night-fly-fishing.jpg alt="picture of fishing"/>
+          <!--want to add a button here that activates game-->
+    </article>
+    <aside>
+      <nav>
+        <h3>Enjoy the game? Here are some other ways to go fishing</h3>
+        <ul>
+        <li><a href=http://www.findtheguides.com/>Find a guide in your area.</a></li>
+        <li><a href=http://www.amazon.com/s/ref=nb_sb_noss_2/175-0918667-4853738?url=search-alias%3Dstripbooks&field-keywords=fly+fishing> Read a book</a></li>
+        <li><a href=http://takemefishing.org/community/places-to-boat-and-fish/>Find a local river.</a></li>
+      </nav>
+    </aside>
+  <footer>
+    <h4>Comments?</h4>
+    <a href="mailto:mdherron@gmail.com">Tosse me a line</a>
+  </footer>
+
+
+
+
+
+</body>
+  </html>
+
 <script>
 //This game prompts a user to pick a lure and see if a fish takes it
 
@@ -31,10 +75,10 @@
     } else if (guess.toLowerCase() === answer && guess === fly[3]) {
     	message = "You've caught a " + Fish2.name + "and it weighs " + Fish2.weight + " lbs!";
     }	else {
-      message = "It didn't bite!"
+      message = "It didn't bite! " + "They were eating " + answer + "s!"
     }
-    alert(message + " They were eating " + answer + " today!");
-  };
+    alert(message);
+  }
 
 
 
