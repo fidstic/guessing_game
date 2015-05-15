@@ -19,4 +19,8 @@ If the user types something other than a string in the array the output defaults
 Updates from May 12th, 2015:
 
 We updated some syntax by taking out white space, adding the word ‘and’ in a prompt, and changing spacing. 
-We tested this goFishGame and there are no bugs. If there were to be any enhancements then a suggestion would be to create a loop. We will focus on our attentions on functions and how to adapt the concepts we learned today in lecture. 
+We tested this goFishGame and there are no bugs. If there were to be any enhancements then a suggestion would be to create a loop. We will focus on our attentions on functions and how to adapt the concepts we learned today in lecture.
+
+Updates from May 14, 2015:
+
+Added HTML to game. 
