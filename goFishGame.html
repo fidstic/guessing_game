@@ -1,8 +1,8 @@
 <!doctype.html>
-  <html>
-    <head>
+<html>
+  <head>
     <title>Fishing Game</title>
-    </head>
+  </head>
     <body>
       <h1><strong>Virtually Fishing For Fun</strong></h1>
       <img src=http://www.yellowdogflyfishing.com/sites/default/files/trips/yellow-dog-flyfishing-adventures-argentina-patagonia-fly-fishing-trout-chocolate-lab-expeditions-12.jpg alt="some picture of fishing on the web"/>
@@ -18,18 +18,20 @@
       <h2>Let's Catch Something</h2>
       <P>It's been a long day of coding so it's time to get out of the city and get fishing! Enter your name and then choose a fly below.</p>
       <img src=https://standupforamerica.files.wordpress.com/2009/06/night-fly-fishing.jpg alt="picture of fishing"/>
-      <break> </break>
-      <p id="name-input"><em>Enter Your Name</em>
+
+      <p id="name-input"> <em>Enter Your Name</em>
         <input type="text" name="Name" size "15" maxlength="20"/>
         <input type="submit" value="Submit" onclick="displayOutput()"/> </p>
+
       <p>What do you think they are biting today? Choose one fly from the dropdown list</p>
       <select name="flies">
-          <option value="adams">adams</option>
-          <option value="royal-wulff">royal wulff</option>
-          <option value="ant">ant</option>
-          <option value="copper-john">copper john</option>
+        <option value="adams">adams</option>
+        <option value="royal-wulff">royal wulff</option>
+        <option value="ant">ant</option>
+        <option value="copper-john">copper john</option>
       </select>
-      <h3 id="net-ouput" alt="output of fishing game"></h3>
+      <h3 id="net-output" alt="output of fishing game"></h3>
+
     </article>
     <aside>
       <nav>
@@ -42,61 +44,61 @@
   </aside>
   <footer>
     <h4>Comments?</h4>
-    <a href="mailto:mdherron@gmail.com">Tosse me a line</a>
+    <a href="mailto:mdherron@gmail.com">Toss me a line</a>
   </footer>
 
-</body>
+  </body>
 </html>
 
 
 <script>
-  //window.onload = function(){
-  var guess, answer, rand, fly, fisher, hooked;
+  window.onload = function(){
+    var guess, answer, rand, fly, fisher, hooked;
 
-  fly =['adams', 'royal wulff', 'ant', 'copper john'];
-  rand = Math.floor(Math.random()* 3);
-  answer = fly[rand];
-  name = document.getElementById("name-input");
-  //name = prompt("What is your name?");
+    fly =['adams', 'royal wulff', 'ant', 'copper john'];
+    rand = Math.floor(Math.random()* 3);
+    answer = fly[rand];
+    name = prompt("What is your name?");
 
+    guess = prompt("Howdy " + name + " What do you think they're biting today? Choose between Adams, Royal Wulff, Ant, and Copper John");
 
-  user = name;
-  guess = document.getElementById("flies");
-  //guess = prompt("Howdy " + name + " What do you think they're biting today? Choose between Adams, Royal Wulff, Ant, and Copper John");
-
-  function River(riverName, location, species, weight, fly) {
-    this.riverName = riverName;
-    this.location = location;
-    this.species = species;
-    this.weight = weight;
-    this.fly = fly;
-    this.message = function () {
-      return "Nice work! You've hooked a " + this.species + " on the beautiful " + this.riverName + " and it weighs " + this.weight + " Don't lose it!" }
-    }
-
-  var fish = new Array ();
-    fish[0] = new River("Snake River", "Idaho", "Cutthroat Trout", "3lbs.", "adams");
-    fish[1] = new River("Henry's Fork", "Idaho", "Rainbow Trout", "2lbs.", "ant");
-    fish[2] = new River("Madison River", "Montana", "Brown Trout", "4lbs.", "copper john");
-    fish[3] = new River("Battenkill River", "Vermont", "Brook Trout", "2lbs.", "royal wulff");
-
-  var goingFishing = function(guess, answer, fly) {
-    if (guess.toLowerCase() === answer && guess === fish[0].fly) {
-      alert(fish[0].message());
+    function River(riverName, location, species, weight, fly) {
+      this.riverName = riverName;
+      this.location = location;
+      this.species = species;
+      this.weight = weight;
+      this.fly = fly;
+      this.message = function () {
+        return "Nice work! You've hooked a " + this.species + " on the beautiful " + this.riverName + " and it weighs " + this.weight + " Don't lose it!" }
       }
-    else if (guess.toLowerCase() === answer && guess === fish[1].fly) {
-      alert(fish[1].message());
-      }
-    else if (guess.toLowerCase() === answer && guess === fish[2].fly) {
-      alert(fish[2].message());
-      }
-    else if (guess.toLowerCase() === answer && guess === fish[3].fly) {
-      alert(fish[3].message());
-      }
-    else {alert("Better luck next time! See you at the Bar!");
-      }
-    }
 
-goingFishing(guess, answer, fly)
-//}
+    var fish = new Array ();
+      fish[0] = new River("Snake River", "Idaho", "Cutthroat Trout", "3lbs.", "adams");
+      fish[1] = new River("Henry's Fork", "Idaho", "Rainbow Trout", "2lbs.", "ant");
+      fish[2] = new River("Madison River", "Montana", "Brown Trout", "4lbs.", "copper john");
+      fish[3] = new River("Battenkill River", "Vermont", "Brook Trout", "2lbs.", "royal wulff");
+
+    var goingFishing = function(guess, answer, fly) {
+      if (guess.toLowerCase() === answer && guess === fish[0].fly) {
+        var nameFish = document.getElementById("net-output");
+        nameFish.innerHTML = fish[0].message();
+        //alert(fish[0].message());
+        }
+      else if (guess.toLowerCase() === answer && guess === fish[1].fly) {
+        nameFish.innerHTML = fish[1].message();
+        //alert(fish[1].message());
+        }
+      else if (guess.toLowerCase() === answer && guess === fish[2].fly) {
+        namefish.innerHTML  = fish[2].message();
+        //alert(fish[2].message());
+        }
+      else if (guess.toLowerCase() === answer && guess === fish[3].fly) {
+        nameFish.innerHTML = fish[3].message();
+        //alert(fish[3].message());
+        }
+      else {return nameFish.innerHTML = "Better luck next time! See you at the Bar!";
+        }
+      }
+    goingFishing(guess, answer, fly)
+  }
 </script>
